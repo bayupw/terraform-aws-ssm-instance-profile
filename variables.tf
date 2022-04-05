@@ -1,11 +1,11 @@
-# Boolean to determine if name will be appended with random strings
+# Boolean to determine if name will be appended with random string
 variable "random_suffix" {
   description = "Set to true to append random suffix"
   type        = bool
   default     = true
 }
 
-# Length of random strings to be appended to the name
+# Length of random string to be appended to the name
 variable "random_string_length" {
   description = "Random string length"
   type        = number
