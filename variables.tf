@@ -1,27 +1,27 @@
 # Boolean to determine if name will be appended with random strings
 variable "random_suffix" {
+  description = "Set to true to append random suffix"
   type        = bool
   default     = true
-  description = "Add random suffix"
 }
 
 # Length of random strings to be appended to the name
 variable "random_string_length" {
+  description = "Random string length"
   type        = number
   default     = 3
-  description = "Random string length"
 }
 
 # SSM IAM Role name
 variable "ssm_instance_role_name" {
+  description = "SSM IAM role name"
   type        = string
   default     = "ssm-role"
-  description = "SSM role name"
 }
 
 # SSM IAM Instance Profile name
 variable "ssm_instance_profile_name" {
+  description = "SSM instance profile name"
   type        = string
   default     = "ssm-instance-profile"
-  description = "SSM instance profile name"
 }
