@@ -47,17 +47,17 @@ variable "partition_map" {
   }
 }
 
-variable "domain_prefix_map" {
-  description = "domain prefix"
+variable "domain_suffix_map" {
+  description = "domain suffix"
   type        = map(any)
 
   default = {
     global = "com"
-    china  = "cn"
+    china  = "com.cn"
   }
 }
 
 locals {
   partition     = lookup(var.partition_map, lower(var.partition), "global")
-  domain_prefix = lookup(var.domain_prefix_map, lower(var.partition), "global")
+  domain_prefix = lookup(var.domain_suffix_map, lower(var.partition), "global")
 }
