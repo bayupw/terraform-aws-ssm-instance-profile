@@ -25,3 +25,34 @@ variable "ssm_instance_profile_name" {
   type        = string
   default     = "ssm-instance-profile"
 }
+
+variable "partition" {
+  description = "AWS type"
+  type        = string
+  default     = "global"
+}
+
+variable "partition_map" {
+  description = "ARN prefix"
+  type        = map(any)
+
+  default = {
+    global = "aws"
+    china  = "aws-cn"
+  }
+}
+
+variable "domain_prefix_map" {
+  description = "domain prefix"
+  type        = map(any)
+
+  default = {
+    global = "com"
+    china  = "cn"
+  }
+}
+
+locals {
+  partition     = lookup(var.partition_map, lower(var.partition), "global")
+  domain_prefix = lookup(var.domain_prefix_map, lower(var.partition), "global")
+}
