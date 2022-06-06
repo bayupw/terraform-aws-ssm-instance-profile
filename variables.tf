@@ -30,6 +30,11 @@ variable "partition" {
   description = "AWS type"
   type        = string
   default     = "global"
+
+  validation {
+    condition     = contains(["global", "china"], lower(var.partition))
+    error_message = "Invalid partition. Choose global or china"
+  }
 }
 
 variable "partition_map" {

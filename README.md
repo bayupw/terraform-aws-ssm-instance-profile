@@ -11,7 +11,7 @@ IAM instance profile name = "ssm-instance-profile-nnn"
 ```hcl
 module "ssm_instance_profile" {
   source  = "bayupw/ssm-instance-profile/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 }
 
 resource "aws_instance" "ec2_instance" {
@@ -27,7 +27,7 @@ resource "aws_instance" "ec2_instance" {
 ```hcl
 module "ssm_instance_profile" {
   source  = "bayupw/ssm-instance-profile/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   random_suffix = true
   random_string_length = 4
@@ -41,6 +41,19 @@ resource "aws_instance" "ec2_instance" {
   # ...
 }
 ```
+
+## Usage for China region
+
+```hcl
+module "ssm_instance_profile" {
+  source  = "bayupw/ssm-instance-profile/aws"
+  version = "1.1.0"
+
+  partition = "china"
+}
+
+```
+
 
 ## Contributing
 
