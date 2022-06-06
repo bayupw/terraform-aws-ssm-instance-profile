@@ -33,7 +33,7 @@ variable "partition" {
 
   validation {
     condition     = contains(["global", "china"], lower(var.partition))
-    error_message = "Invalid partition. Choose global or china"
+    error_message = "Invalid partition. Choose global or china."
   }
 }
 
